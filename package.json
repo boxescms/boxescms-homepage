@@ -1,0 +1,54 @@
+{
+  "name": "boxescms-homepage",
+  "version": "1.0.0",
+  "description": "api based CMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boxescms/boxescms-homepage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boxescms/boxescms-homepage/issues"
+  },
+  "homepage": "https://github.com/boxescms/boxescms-homepage#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "del": "^3.0.0",
+    "dotenv-webpack": "^1.5.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-hashsum": "^1.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notifiable-task": "^1.1.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^1.0.0",
+    "pug-lint": "^2.5.0",
+    "sass-lint": "^1.12.1",
+    "sass-loader": "^6.0.6",
+    "standard": "^10.0.3",
+    "style-loader": "^0.20.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "vinyl-named": "^1.1.0",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "normalize.css": "^7.0.0",
+    "smoothscroll-polyfill": "^0.4.0",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1"
+  }
+}
