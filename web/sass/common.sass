@@ -1,0 +1,53 @@
+@import 'variables'
+@import 'fonts'
+@import 'colors'
+@import url('https://fonts.googleapis.com/css?family=Hind')
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  font-family: 'nunito', Arial, sans-serif
+  font-size: 16px
+  color: $steel
+  overflow-x: hidden
+  overflow-y: scroll
+  scroll-behavior: smooth
+  // background: linear-gradient($blue, $navy, $ocean)
+
+h1,
+h2,
+h3,
+h4,
+  font-family: 'ubuntu', Arial, sans-serif
+  color: $mist
+
+a
+  color: inherit
+  text-decoration: none
+
+button
+
+section
+  position: relative
+  min-height: 500px
+  width: 100%
+  padding: 50px 50px 0 50px
+
+  @media #{$mobile}
+    padding: 20px 20px 0 20px
+
+  & + section
+    margin-top: 50px
+
+  &.last
+    padding-bottom: 50px
+
+  &.first
+    padding-top: 100px
+
+  > h1
+    text-align: center
+    color: $orange
+

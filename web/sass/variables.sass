@@ -1,0 +1,18 @@
+// media queries
+$desktop: "(min-width: 1024px)"
+$mobile: "(max-width: 1023px)"
+
+// mixins
+=clearfix
+  &::after
+    content: ""
+    display: table
+    clear: both
+
+=clearlist
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+=shadow
+  box-shadow: 0 0 8px 5px rgba(180, 180, 180, 0.1)
