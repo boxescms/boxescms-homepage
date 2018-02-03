@@ -95,6 +95,10 @@
           cursor: pointer
           padding: 0px 20px
           height: 10px
+
+          @media #{$mobile}
+            padding: 8px 20px
+
           &:nth-child(1)
             background-color: rgba(255, 170, 0, 0.7)
 
