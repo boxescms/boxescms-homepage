@@ -4,7 +4,10 @@
   "description": "api based CMS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:all": "npm run lint:js && npm run lint:sass && npm run lint:pug",
+    "lint:js": "standard",
+    "lint:sass": "sass-lint -v",
+    "lint:pug": "pug-lint web/pug"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sequence": "^1.0.0",
     "pug-lint": "^2.5.0",
+    "pug-lint-vue": "^0.1.3",
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.3",
