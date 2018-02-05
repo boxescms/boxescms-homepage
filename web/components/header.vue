@@ -27,7 +27,7 @@
     width: 90%
     border-radius: 0 0 10px 10px
     background-color: $white
-    z-index: 1
+    z-index: 2
     overflow: hidden
     +shadow
 

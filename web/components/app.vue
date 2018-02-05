@@ -3,16 +3,46 @@
     svgcomponents
     appheader
     intro
+    .right-prop
     about
+    .left-prop
     features
     price
     appfooter
 </template>
 
 <style lang="sass" scoped>
-  #content
+  #app
+    position: relative
     scroll-behavior: smooth
-    overscroll-y: auto
+    overflow-x: hidden
+
+    .left-prop
+      overflow: hidden
+      position: absolute
+      top: 27%
+      left: -60px
+      z-index: 1
+      height: 360px
+      width: 318px
+      background-image: url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg')
+      background-repeat: no-repeat
+      background-position: 0px 0px, 52px 30px, 104px 60px ,156px 90px, 208px 120px, 0px 59px, 52px 89px, 104px 119px ,156px 149px, 0px 118px, 52px 148px, 104px 178px, 0px 177px, 52px 207px, 0px 236px
+      background-size: 110px
+
+    .right-prop
+      overflow: hidden
+      position: absolute
+      top: 11.5%
+      z-index: 1
+      right: -60px
+      height: 360px
+      width: 318px
+      background-image: url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg'), url('../assets/images/box-nospace.svg')
+      background-repeat: no-repeat
+      background-position: 0px 0px, 52px 30px, 104px 60px ,156px 90px, 208px 120px, 0px 59px, 52px 89px, 104px 119px ,156px 149px, 0px 118px, 52px 148px, 104px 178px, 0px 177px, 52px 207px, 0px 236px
+      background-size: 110px
+      transform: rotateY(180deg)
 
 </style>
 
