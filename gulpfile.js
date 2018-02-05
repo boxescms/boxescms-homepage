@@ -7,38 +7,37 @@ const pug = require('gulp-pug')
 const hashsum = require('gulp-hashsum')
 const del = require('del')
 const replace = require('gulp-batch-replace')
-const sequence = require('gulp-sequence')
 const webpackStream = require('webpack-stream')
 const webpack = require('webpack')
 const named = require('vinyl-named')
 const {browserslist} = require('./package.json')
 
+const {parallel, series, task, src, dest, watch, lastRun} = gulp
+
 require('gulp-notifiable-task')
 
-gulp.task('default', ['prepare', 'build'])
-gulp.task('prepare', cb => sequence('clean:static', ['prepare:normalize', 'prepare:smoothscroll'])(cb))
-gulp.task('clean', ['clean:html', 'clean:js', 'clean:css', 'clean:assets'])
-
-gulp.task('clean:html', () => del('dist/**/*.html'))
-gulp.task('clean:js', () => del('dist/js/'))
-gulp.task('clean:css', () => del('dist/css/'))
-gulp.task('clean:assets', () => del('dist/assets/'))
-gulp.task('clean:static', () => del('dist/assets/'))
-
-gulp.task('prepare:normalize', () => {
-  return gulp.src('node_modules/normalize.css/normalize.css')
-    .pipe(gulp.dest('dist/static/'))
+task('clean:static', () => {
+  return del(['dist/static'])
 })
 
-gulp.task('prepare:smoothscroll', () => {
-  return gulp.src('node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js')
-    .pipe(gulp.dest('dist/static/'))
+task('prepare:normalize', () => {
+  return src('node_modules/normalize.css/normalize.css')
+    .pipe(dest('dist/static/'))
 })
 
-gulp.task('build', cb => sequence('clean', ['build:css', 'build:js', 'build:assets'], 'hashsum', 'build:html')(cb))
+task('prepare:smoothscroll', () => {
+  return src('node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js')
+    .pipe(dest('dist/static/'))
+})
 
-gulp.task('hashsum', () => {
-  return gulp.src('dist/**/*.{png,gif,jpg,css,js,svg}')
+task('prepare', series('clean:static', parallel('prepare:normalize', 'prepare:smoothscroll')))
+
+task('clean', () => {
+  return del(['dist/assets', 'dist/css', 'dist/js', 'dist/**/*.html'])
+})
+
+task('hashsum', () => {
+  return src('dist/**/*.{png,gif,jpg,css,js,svg}')
     .pipe(hashsum({
       dest: 'dist',
       json: true,
@@ -46,52 +45,54 @@ gulp.task('hashsum', () => {
     }))
 })
 
-gulp.notifiableTask('build:html', cb => sequence('compile:html', 'hash:html')(cb))
-
-gulp.task('compile:html', () => {
-  return gulp.src(['web/pug/**/*.pug', '!web/pug/components/*.pug'])
+task('compile:html', () => {
+  return src(['web/pug/**/*.pug', '!web/pug/components/*.pug'], {since: lastRun('compile:html')})
     .pipe(pug())
-    .pipe(gulp.dest('dist/'))
+    .pipe(dest('dist/'))
 })
 
-gulp.task('hash:html', () => {
+task('hash:html', () => {
   const sums = require('./dist/hashsum.json')
-
   const time = Date.now()
-
   const replacements = Object.keys(sums).map(sum => [sum, sum + '?' + time])
 
-  return gulp.src('dist/**/*.html')
+  return src('dist/**/*.html', {since: lastRun('hash:html')})
     .pipe(replace(replacements))
-    .pipe(gulp.dest('dist/'))
+    .pipe(dest('dist/'))
 })
 
-gulp.notifiableTask('build:css', () => {
-  return gulp.src('web/sass/**/*.sass')
-    .pipe(sass({
-      indentation: true
-    }))
+task('build:html', series('compile:html', 'hash:html'))
+
+task('build:js', () => {
+  return src('web/js/**/*.js')
+    .pipe(named())
+    .pipe(webpackStream(require('./webpack.config.js'), webpack))
+    .pipe(dest('dist/js/'))
+})
+
+task('build:css', () => {
+  return src('web/sass/**/*.sass', {since: lastRun('build:css')})
+    .pipe(sass())
     .pipe(autoprefix({
       browsers: browserslist
     }))
-    .pipe(gulp.dest('dist/css/'))
+    .pipe(dest('dist/css/'))
 })
 
-gulp.notifiableTask('build:js', () => {
-  return gulp.src('web/js/**/*.js')
-    .pipe(named())
-    .pipe(webpackStream(require('./webpack.config.js'), webpack))
-    .pipe(gulp.dest('dist/js/'))
+task('build:assets', () => {
+  return src('web/assets/**', {since: lastRun('build:assets')})
+    .pipe(dest('dist/assets'))
 })
 
-gulp.notifiableTask('build:assets', () => {
-  return gulp.src('web/assets/**')
-    .pipe(gulp.dest('dist/assets'))
-})
+task('build', series('clean', parallel('build:css', 'build:js', 'build:assets'), 'hashsum', 'build:html'))
 
-gulp.task('watch', ['prepare', 'build', 'watch:html', 'watch:css', 'watch:js', 'watch:assets'])
+task('default', parallel('prepare', 'build'))
 
-gulp.task('watch:html', () => gulp.watch('web/pug/**/*.pug', ['build:html']))
-gulp.task('watch:css', () => gulp.watch('web/sass/**/*.sass', ['build:css']))
-gulp.task('watch:js', () => gulp.watch(['web/js/**/*.js', 'web/components/**/*.vue', 'web/library/**/*.js'], ['build:js']))
-gulp.task('watch:assets', () => gulp.watch('web/assets/**/*', ['build:assets']))
+task('watch:html', () => watch('web/pug/**/*.pug', parallel('build:html')))
+task('watch:css', () => watch('web/sass/**/*.sass', parallel('build:css')))
+task('watch:js', () => watch(['web/js/**/*.js', 'web/components/**/*.vue', 'web/library/**/*.js'], parallel('build:js')))
+task('watch:assets', () => watch('web/assets/**/*', parallel('build:assets')))
+
+task('watch', parallel('watch:html', 'watch:css', 'watch:js', 'watch:assets'))
+
+task('watch', parallel('prepare', 'build', 'watch'))
