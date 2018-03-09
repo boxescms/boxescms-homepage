@@ -18,7 +18,7 @@
         .category.premium
           .name PREMIUM
           .price 30
-          .desc Per month billed annually.
+          .desc Per month#[br]billed annually.
         ul
           li Lorem ipsum dolor sit amet asf
           li Lorem ipsum dolor sit amet sdfff
@@ -39,7 +39,7 @@
       justify-content: space-around
       width: 80%
       +clearlist
-      margin: 50px auto 0 auto
+      margin: 0 auto
 
       .category
         text-align: left
@@ -50,7 +50,7 @@
 
         .price
           position: relative
-          font-size: 4em
+          font-size: 6em
           text-align: left
           float: left
           text-align: left
@@ -70,15 +70,15 @@
 
         &.free
           .price
-            width: 12%
+            width: 20%
           .desc
-            width: 88%
+            width: 80%
 
         &.premium
           .price
-            width: 26%
+            width: 35%
           .desc
-            width: 74%
+            width: 65%
 
       > li
         width: 30%
@@ -87,6 +87,7 @@
         ul
           list-style-type: none
           text-align: left
+          margin-top: 20px
 
           li
             position: relative

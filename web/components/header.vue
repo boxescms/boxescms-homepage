@@ -3,17 +3,16 @@
     ul
       li#logo
         | BOXES
-      li
-        a(href="#intro") INTRO
+      //- li
+      //-   a(href="#intro") INTRO
       li
         a(href="#about") ABOUT
       li
         a(href="#features") FEATURES
       li
         a(href="#price") PRICE
-
-    //- svg#logo(viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve")
-      use(xlink:href="#box-svg")
+      li
+        a(href="#contact") CONTACT
 
 </template>
 

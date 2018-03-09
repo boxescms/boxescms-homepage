@@ -1,5 +1,5 @@
 <template lang="pug">
-  section#contact.last
+  section#contact
     h1 Contact Us
     form#contactus-wrapper
       .row

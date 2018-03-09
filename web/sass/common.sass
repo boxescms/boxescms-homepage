@@ -32,9 +32,8 @@ a
 
 section
   position: relative
-  min-height: 400px
   width: 100%
-  padding: 50px 50px 50px 50px
+  padding: 100px 50px 100px 50px
 
   @media #{$mobile}
     padding: 20px 20px 20px 20px
@@ -45,8 +44,24 @@ section
   &.first
     padding-top: 100px
 
+  // &.centralized
+  //   display: flex
+  //   flex-direction: column
+  //   justify-content: space-around
+
   > h1
     text-align: center
+    margin-bottom: 50px
+
+  & + section
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 50%
+      width: 60%
+      border-top: 1px solid #efefef
+      transform: translateX(-50%)
 
 label
   display: block

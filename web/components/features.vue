@@ -28,7 +28,7 @@
 
       li
         width: 33.33%
-        padding: 30px
+        padding: 0 30px
         text-align: center
 
 </style>
