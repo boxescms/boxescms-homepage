@@ -9,12 +9,8 @@
   @import '../sass/colors'
 
   #about
+    // background-color: $blue-50
     text-align: center
-    padding-top: 300px
-    padding-bottom: 220px
-
-    p
-      font-size: 24px
 </style>
 
 <script>

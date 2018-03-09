@@ -93,6 +93,4 @@ task('watch:css', () => watch('web/sass/**/*.sass', parallel('build:css')))
 task('watch:js', () => watch(['web/js/**/*.js', 'web/components/**/*.vue', 'web/library/**/*.js'], parallel('build:js')))
 task('watch:assets', () => watch('web/assets/**/*', parallel('build:assets')))
 
-task('watch', parallel('watch:html', 'watch:css', 'watch:js', 'watch:assets'))
-
-task('watch', parallel('prepare', 'build', 'watch'))
+task('watch', series('default', parallel('watch:html', 'watch:css', 'watch:js', 'watch:assets')))

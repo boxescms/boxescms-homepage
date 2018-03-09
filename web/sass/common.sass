@@ -7,34 +7,37 @@
 
 body
   margin: 0
-  font-family: "nunito", Arial, sans-serif
+  font-family: "ubuntu", Arial, sans-serif
   font-size: 16px
-  color: $steel
   overflow-x: hidden
   overflow-y: scroll
 
 h1,
 h2,
+h3
+  color: $blue-500
+
+h1,
+h2,
 h3,
-h4
-  font-family: "ubuntu", Arial, sans-serif
-  color: $mist
+h4,
+h5,
+h6,
+p
+  margin: 0.2em 0
 
 a
-  color: inherit
+  color: $blue-100
   text-decoration: none
 
 section
   position: relative
-  // min-height: 500px
+  min-height: 400px
   width: 100%
-  padding: 50px 50px 0 50px
+  padding: 50px 50px 50px 50px
 
   @media #{$mobile}
-    padding: 20px 20px 0 20px
-
-  & + section
-    margin-top: 50px
+    padding: 20px 20px 20px 20px
 
   &.last
     padding-bottom: 50px
@@ -44,5 +47,30 @@ section
 
   > h1
     text-align: center
-    color: $orange
 
+label
+  display: block
+  color: $blue-400
+
+input
+  border: 0
+  outline: 0
+  padding: 20px
+  border-radius: 5px
+  background-color: $grey
+  // +shadow
+
+textarea
+  border: 0
+  outline: 0
+  padding: 20px
+  border-radius: 5px
+  min-height: 150px
+  background-color: $grey
+  // +shadow
+
+label + input, label + textarea
+  margin-top: 10px
+
+input + label, textarea + label
+  margin-top: 20px

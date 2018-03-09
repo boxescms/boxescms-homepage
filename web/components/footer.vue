@@ -1,14 +1,11 @@
 <template lang="pug">
   footer
-    .wrapper
-      ul
-        li
-          a Terms Of Service
-        li
-          a Privacy Policy
+    p Maintained by the #[a(href="https://github.com/orgs/boxescms/people", target="_blank") team]
 
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus praesentium fugit unde sequi optio.
-      p.copyright copyright 2018 Boxes Sdn. Bhd.
+    .organisations
+      a(href="https://github.com/boxescms/boxescms", target="_blank")
+        img(src="assets/images/github-logo.svg")
+
 </template>
 
 <style lang="sass" scoped>
@@ -16,35 +13,21 @@
   @import '../sass/colors'
 
   footer
-    background-color: $ocean
     position: relative
     width: 100%
     padding: 30px
-    // color: $navy
     text-align: center
+    background-color: $grey
 
-    .copyright
-      font-size: 0.7em
-      color: $darkorange
+    .organisations
+      margin-top: 20px
 
-    .wrapper
-      width: 100%
-      max-width: 500px
-      position: relative
-      margin: 0 auto
+      a + a
+        margin-left: 10px
 
-    ul
-      display: flex
-      flex-flow: row wrap
-      justify-content: space-around
-      width: 100%
-      max-width: 500px
-      list-style-type: none
-      padding: 0
-      margin: 0 auto 30px auto
-
-      li
-        color: $mist
+      img
+        width: 30px
+        display: inline-block
 
 </style>
 

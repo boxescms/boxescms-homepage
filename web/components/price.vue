@@ -1,25 +1,31 @@
 <template lang="pug">
   section#price.last
     h1 price
-    ul
+    ul#pricelist
       li
-        //- h3 BASIC
-        .price-wrapper
-          p 59.90
+        .category.free
+          .name FREE
+          .price 0
+          .desc Everything you need to start off your personal website!
         ul
           li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
-          li Lorem ipsum dolor sit amet
+          li Lorem ipsum dolor sit amet asdfasdf
+          li Lorem ipsum dolor sit amet asdfa asfas df
+          li Lorem ipsum dolor sit amet asdf asdf asdf asdf
+          li Lorem ipsum dolor sit amet asdfas fdas fsad fsd f
+          li Lorem ipsum dolor sit amet asdfasd fads f
+      li
+        .category.premium
+          .name PREMIUM
+          .price 30
+          .desc Per month billed annually.
+        ul
+          li Lorem ipsum dolor sit amet asf
+          li Lorem ipsum dolor sit amet sdfff
+          li Lorem ipsum dolor sit ameta s
+          li Lorem ipsum dolor sit ametas
+          li Lorem ipsum dolor sit amets adfsd
+          li Lorem ipsum dolor sit amet asdf
 </template>
 
 <style lang="sass" scoped>
@@ -27,80 +33,75 @@
   @import '../sass/colors'
 
   #price
-    > ul
+    #pricelist
       display: flex
       flex-flow: row wrap
-      justify-content: center
-      align-contents: flex-start
-      align-items: center
+      justify-content: space-around
+      width: 80%
       +clearlist
+      margin: 50px auto 0 auto
+
+      .category
+        text-align: left
+        +clearfix
+
+        .name
+          color: $blue-200
+
+        .price
+          position: relative
+          font-size: 4em
+          text-align: left
+          float: left
+          text-align: left
+          color: $blue-400
+
+          &::before
+            content: "$"
+            font-size: 0.4em
+            position: absolute
+            top: 10px
+            right: 100%
+
+        .desc
+          float: left
+          padding: 10px
+          font-weight: 300
+
+        &.free
+          .price
+            width: 12%
+          .desc
+            width: 88%
+
+        &.premium
+          .price
+            width: 26%
+          .desc
+            width: 74%
 
       > li
-        background-color: $white
-        width: 40%
-        min-width: 320px
-        border-radius: 10px
-        text-align: center
-        padding-bottom: 20px
-        overflow: hidden
-        +shadow
-
-        & + li
-          margin-left: 30px
-
-        > h3
-          text-align: center
-
-        .price-wrapper
-          position: relative
-          background-color: $darkorange
-          margin-bottom: 20px
-
-          p
-            position: relative
-            display: inline-block
-            text-align: center
-            font-size: 70px
-            margin: 20px auto
-            color: $white
-
-            &::before
-              content: '$'
-              position: absolute
-              display: block
-              top: 0
-              left: 0
-              transform: translateX(-100%)
-              font-size: 30px
+        width: 30%
+        +clearfix
 
         ul
-          display: flex
-          flex-flow: column wrap
-          +clearlist
-
-          li + li
-            margin-top: 20px
+          list-style-type: none
+          text-align: left
 
           li
             position: relative
-            padding-left: 30px
-            margin: 0 auto
-            text-align: left
 
             &::before
-              content: ''
-              background-image: url('../assets/images/box.svg')
+              content: "L"
+              transform: rotateY(180deg) rotateZ(-45deg)
               position: absolute
               display: block
-              width: 20px
-              height: 20px
               top: 0
-              left: 0
-              background-size: contain
-              background-repeat: no-repeat
-              background-position: center
+              right: 107%
+              color: $blue-200
 
-
+            & + li
+              margin-top: 15px
 </style>
 
 <script>

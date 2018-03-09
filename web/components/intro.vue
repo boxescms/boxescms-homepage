@@ -1,8 +1,5 @@
 <template lang="pug">
   section#intro.first
-    svg#logo(viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="250" height="250")
-      use(xlink:href="#boxes-svg")
-
     h1 BOXES CMS
     h2 ExpressJS based API centric CMS
 
@@ -14,22 +11,18 @@
 
   #intro
     text-align: center
+    height: 600px
+    background-color: $blue-500
+
+    @media #{$mobile}
+      height: 450px
 
     h1
-      margin: 0
-      font-size: 64px
-
-      @media #{$mobile}
-        font-size: 54px
+      color: $white-50
+      font-size: 4em
 
     h2
-      margin: 0
-      font-size: 32px
-      color: $steel
-
-      @media #{$mobile}
-        font-size: 20px
-
+      color: $blue-100
 </style>
 
 <script>

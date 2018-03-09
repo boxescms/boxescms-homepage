@@ -1,6 +1,8 @@
 <template lang="pug">
   header(:class="{tiny: tinystate}")
     ul
+      li#logo
+        | BOXES
       li
         a(href="#intro") INTRO
       li
@@ -20,127 +22,26 @@
   @import '../sass/colors'
 
   header
-    position: fixed
-    top: 0
-    left: 50%
-    transform: translateX(-50%)
-    width: 90%
-    border-radius: 0 0 10px 10px
-    background-color: $white
+    position: relative
+    width: 100%
+    margin: 0 auto
     z-index: 2
     overflow: hidden
-    +shadow
-
-    #logo
-      position: absolute
-      top: 6px
-      left: 6px
-      width: 60px
-      height: 60px
-      cursor: pointer
-      transition: top 500ms, left 500ms, width 500ms, height 500ms
+    color: $white-50
+    background-color: $blue-500
 
     ul
-      position: relative
       display: flex
       flex-flow: row wrap
       justify-content: flex-end
-      align-content: center
-      align-items: center
       +clearlist
 
-      li
-        position: relative
-        padding: 15px 20px 15px 20px
-        font-size: 16px
-        transition: padding 500ms, background-color 500ms
-        text-align: center
-        cursor: pointer
-
-        @media #{$mobile}
-          width: 25%
-          font-size: 14px
-          padding: 15px 10px
-
-        a
-          display: block
-          color: $grey
-          transition: color 500ms, opacity 500ms 100ms
-
-        &:nth-child(1)
-          a:hover
-            color: $orange
-
-        &:nth-child(2)
-          a:hover
-            color: $darkorange
-
-        &:nth-child(3)
-          a:hover
-            color: $shore
-
-        &:nth-child(4)
-          a:hover
-            color: $ocean
-
-    &.tiny
       #logo
-        top: 3px
-        left: 3px
-        width: 30px
-        height: 30px
+        margin-right: auto
 
-      ul
-        li
-          cursor: pointer
-          padding: 0px 20px
-          height: 10px
+      li
+        padding: 20px 30px
 
-          @media #{$mobile}
-            padding: 8px 20px
-
-          &:nth-child(1)
-            background-color: rgba(255, 170, 0, 0.7)
-
-          &:nth-child(2)
-            background-color: rgba(255, 143, 0, 0.7)
-
-          &:nth-child(3)
-            background-color: rgba(51, 81, 143, 0.7)
-
-          &:nth-child(4)
-            background-color: rgba(29, 41, 68, 0.7)
-
-          &:hover
-            opacity: 1
-
-            &:nth-child(1)
-              background-color: rgba(255, 170, 0, 1)
-
-            &:nth-child(2)
-              background-color: rgba(255, 143, 0, 1)
-
-            &:nth-child(3)
-              background-color: rgba(51, 81, 143, 1)
-
-            &:nth-child(4)
-              background-color: rgba(29, 41, 68, 1)
-
-          a
-            color: $white
-            opacity: 0
-            transition: color 500ms, opacity 300ms
-
-            &:hover
-              color: $white
-
-  @keyframes boxin
-    0%
-      transform: translate(-50%, 0px)
-    30%
-      transform: translate(-50%, 0px)
-    65%
-      transform: translate(-50%, -6px)
 </style>
 
 <script>

@@ -11,15 +11,6 @@
       li
         h2 TITLE
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.
-      li
-        h2 TITLE
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.
-      li
-        h2 TITLE
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.
-      li
-        h2 TITLE
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.
 </template>
 
 <style lang="sass" scoped>
@@ -30,23 +21,15 @@
     ul
       display: flex
       flex-flow: row wrap
-      justify-content: space-around
+      justify-content: flex-start
+      width: 80%
       +clearlist
+      margin: 0 auto
 
       li
-        width: 30%
+        width: 33.33%
         padding: 30px
-        background-color: $white
-        border-radius: 10px
-        margin-top: 30px
-        +shadow
-
-        @media #{$mobile}
-          width: 90%
-
-        > h2
-          margin-top: 0
-          color: $dirt
+        text-align: center
 
 </style>
 
