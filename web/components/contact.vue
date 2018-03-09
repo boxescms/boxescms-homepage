@@ -11,9 +11,9 @@
           input(type="text", placeholder="boxes@cms.com*")
         .col
           label Phone Number:
-          input(type="text", placeholder="+60 123456789")
+          input(type="text", placeholder="+60123456789")
       .row
-        label Your Message:
+        label Message:
         textarea(placeholder="Hi, my name is jeff... *")
 </template>
 

@@ -1,6 +1,6 @@
 <template lang="pug">
-  section#about.centralized
-    h1 about
+  section#about
+    h1 About
     p Lorem ipsum dolor sit amet, consectetur adipisicing elit.#[br]Aliquid reiciendis consectetur nostrum reprehenderit, quam nihil hic,#[br]dignissimos cumque dolore facilis impedit.#[br]Libero, inventore illo mollitia odio aut eaque quod sint!
 </template>
 

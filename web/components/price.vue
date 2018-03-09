@@ -1,6 +1,6 @@
 <template lang="pug">
   section#price.last
-    h1 price
+    h1 Price
     ul#pricelist
       li
         .category.free

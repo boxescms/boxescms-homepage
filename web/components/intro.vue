@@ -11,7 +11,7 @@
 
   #intro
     text-align: center
-    height: 600px
+    height: 700px
     background-color: $blue-500
 
     @media #{$mobile}
@@ -20,6 +20,7 @@
     h1
       color: $white-50
       font-size: 4em
+      margin-bottom: 0
 
     h2
       color: $blue-100

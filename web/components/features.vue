@@ -1,6 +1,6 @@
 <template lang="pug">
   section#features
-    h1 features
+    h1 Features
     ul
       li
         h2 TITLE
