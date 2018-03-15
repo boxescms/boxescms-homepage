@@ -3,8 +3,8 @@
     h1 Features
     ul
       li
-        h2 TITLE
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.
+        h2 Quick Setup
+        p Install node and run #[span.codeblock yarn add boxescms] to initiate your project on the command line.
       li
         h2 TITLE
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nihil illo esse, voluptatem, similique quo reiciendis sequi.

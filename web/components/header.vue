@@ -4,15 +4,15 @@
       li#logo
         | BOXES
       //- li
-      //-   a(href="#intro") INTRO
-      li
-        a(href="#about") ABOUT
+      //-   a(href="#installation") INSTALLATION
       li
         a(href="#features") FEATURES
       li
         a(href="#price") PRICE
       li
         a(href="#contact") CONTACT
+      li
+        a(href="#support") SUPPORT
 
 </template>
 
@@ -37,6 +37,11 @@
 
       #logo
         margin-right: auto
+        padding-left: 50px
+        background-image: url("assets/images/boxes.svg")
+        background-position: 5px
+        background-size: 40px 40px
+        background-repeat: no-repeat
 
       li
         padding: 20px 30px

@@ -2,11 +2,11 @@
   #app
     appheader
     intro
-    about
+    //- about
     features
     price
     contact
-    donation
+    support
     appfooter
 </template>
 
@@ -26,13 +26,13 @@
   import features from '../components/features.vue'
   import price from '../components/price.vue'
   import contact from '../components/contact.vue'
-  import donation from '../components/donation.vue'
+  import support from '../components/support.vue'
   import appfooter from '../components/footer.vue'
 
   export default {
     name: 'APP',
     components: {
-      intro, about, features, price, appheader, appfooter, contact, donation
+      intro, about, features, price, appheader, appfooter, contact, support
     }
   }
 </script>

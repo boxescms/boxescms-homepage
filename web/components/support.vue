@@ -1,5 +1,5 @@
 <template lang="pug">
-  section#donation
+  section#support
     h1 Support Our Development
     p If you'd like to show your support, you can make a donation to show your love.
 
@@ -23,7 +23,7 @@
   @import '../sass/variables'
   @import '../sass/colors'
 
-  #donation
+  #support
     text-align: center
 
     ul
@@ -56,6 +56,6 @@
 
 <script>
   export default {
-    name: 'DONATION'
+    name: 'SUPPORT'
   }
 </script>

@@ -1,5 +1,6 @@
 <template lang="pug">
   section#intro.first
+    img(src="assets/images/boxes.svg")
     h1 BOXES CMS
     h2 ExpressJS based API centric CMS
 
@@ -16,6 +17,11 @@
 
     @media #{$mobile}
       height: 450px
+
+    img
+      display: block
+      width: 30%
+      margin: 0 auto
 
     h1
       color: $white-50
