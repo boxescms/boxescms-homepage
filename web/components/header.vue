@@ -1,7 +1,7 @@
 <template lang="pug">
   header(:class="{tiny: tinystate}")
     ul
-      li#logo
+      li#logo(@click="toHome")
         | BOXES
       //- li
       //-   a(href="#installation") INSTALLATION
@@ -38,10 +38,11 @@
       #logo
         margin-right: auto
         padding-left: 50px
-        background-image: url("assets/images/boxes.svg")
-        background-position: 5px
-        background-size: 40px 40px
+        background-image: url("assets/images/boxes-tiny.svg")
+        background-position: 25px
+        background-size: 20px 20px
         background-repeat: no-repeat
+        cursor: pointer
 
       li
         padding: 20px 30px
@@ -79,6 +80,11 @@
           this.tinystate = false
         }
       })
+    },
+    methods: {
+      toHome () {
+        window.location.href = '/'
+      }
     }
   }
 </script>

@@ -37,6 +37,12 @@
       li
         width: 23%
 
+        @media #{$mobile}
+          width: 90%
+
+        & + li
+          margin-top: 20px
+
         img
           display: block
 
@@ -51,6 +57,7 @@
         p
           font-size: 0.8em
           margin-top: 20px
+          word-break: break-all
 
 </style>
 

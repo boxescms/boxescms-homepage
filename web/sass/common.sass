@@ -7,7 +7,7 @@
 
 body
   margin: 0
-  font-family: "ubuntu", Arial, sans-serif
+  font-family: "Avenir Next", "Avenir", Arial, sans-serif
   font-size: 16px
   overflow-x: hidden
   overflow-y: scroll
@@ -16,6 +16,7 @@ h1,
 h2,
 h3
   color: $blue-500
+  font-weight: 500
 
 h1,
 h2,
@@ -36,7 +37,7 @@ section
   padding: 100px 50px 100px 50px
 
   @media #{$mobile}
-    padding: 20px 20px 20px 20px
+    padding: 50px 25px 50px 25px
 
   &.last
     padding-bottom: 50px
@@ -44,14 +45,12 @@ section
   &.first
     padding-top: 100px
 
-  // &.centralized
-  //   display: flex
-  //   flex-direction: column
-  //   justify-content: space-around
-
   > h1
     text-align: center
     margin-bottom: 50px
+
+    @media #{$mobile}
+      margin-bottom: 30px
 
   & + section
     &::before
@@ -66,7 +65,7 @@ section
 span
   &.codeblock
     background-color: $blue-200
-    padding: 1px 5px
+    padding: 0 5px
     border-radius: 3px
     word-break: keep-all
     white-space: nowrap

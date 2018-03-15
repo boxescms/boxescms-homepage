@@ -26,6 +26,9 @@
       width: 80%
       margin: 50px auto 0 auto
 
+      @media #{$mobile}
+        width: 100%
+
       .row
         width: 100%
         display: flex
@@ -37,6 +40,12 @@
 
         .col
           width: 30%
+
+          @media #{$mobile}
+            width: 100%
+
+          & + .col
+            margin-top: 30px
 
       input
         width: 100%

@@ -12,21 +12,25 @@
 
   #intro
     text-align: center
-    height: 700px
     background-color: $blue-500
+    padding: 50px 50px 80px 50px
 
     @media #{$mobile}
-      height: 450px
+      padding: 20px 20px 20px 20px
+
 
     img
       display: block
       width: 30%
       margin: 0 auto
+      min-width: 150px
+      max-width: 250px
 
     h1
       color: $white-50
       font-size: 4em
       margin-bottom: 0
+      font-weight: 200
 
     h2
       color: $blue-100

@@ -1,12 +1,13 @@
 <template lang="pug">
-  section#price.last
-    h1 Price
+  section#price
+    h1 Pricing
     ul#pricelist
       li
-        .category.free
-          .name FREE
-          .price 0
-          .desc Everything you need to start off your personal website!
+        .category
+          p.name FREE
+          .details
+            p.price 0
+            p.desc Everything you need to start off your personal website!
         ul
           li Lorem ipsum dolor sit amet
           li Lorem ipsum dolor sit amet asdfasdf
@@ -16,9 +17,10 @@
           li Lorem ipsum dolor sit amet asdfasd fads f
       li
         .category.premium
-          .name PREMIUM
-          .price 30
-          .desc Per month#[br]billed annually.
+          p.name PREMIUM
+          .details
+            p.price 30
+            p.desc Per month#[br]billed annually.
         ul
           li Lorem ipsum dolor sit amet asf
           li Lorem ipsum dolor sit amet sdfff
@@ -41,48 +43,57 @@
       +clearlist
       margin: 0 auto
 
-      .category
-        text-align: left
-        +clearfix
-
-        .name
-          color: $blue-200
-
-        .price
-          position: relative
-          font-size: 6em
-          text-align: left
-          float: left
-          text-align: left
-          color: $blue-400
-
-          &::before
-            content: "$"
-            font-size: 0.4em
-            position: absolute
-            top: 10px
-            right: 100%
-
-        .desc
-          float: left
-          padding: 10px
-          font-weight: 300
-
-        &.free
-          .price
-            width: 20%
-          .desc
-            width: 80%
-
-        &.premium
-          .price
-            width: 35%
-          .desc
-            width: 65%
+      @media #{$mobile}
+        width: 100%
 
       > li
-        width: 30%
-        +clearfix
+        width: 35%
+
+        @media #{$mobile}
+          width: 100%
+
+        & + li
+          @media #{$mobile}
+            margin-top: 50px
+
+        .category
+          text-align: left
+
+          p
+            margin: 0
+
+          .details
+            display: flex
+            flex-flow: row nowrap
+            justify-content: flex-start
+            align-items: top
+
+          .name
+            width: 100%
+            color: $blue-200
+
+          .price
+            position: relative
+            display: inline-block
+            font-size: 6em
+            text-align: left
+            color: $blue-400
+
+            @media #{$mobile}
+              margin-left: 20px
+
+            &::before
+              content: "$"
+              font-size: 0.4em
+              position: absolute
+              top: 10px
+              right: 100%
+
+          .desc
+            display: inline-block
+            padding: 10px
+            font-weight: 300
+
 
         ul
           list-style-type: none
@@ -103,6 +114,8 @@
 
             & + li
               margin-top: 15px
+
+
 </style>
 
 <script>
