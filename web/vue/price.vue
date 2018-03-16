@@ -109,7 +109,7 @@
               position: absolute
               display: block
               top: 0
-              right: 107%
+              left: -30px
               color: $blue-200
 
             & + li

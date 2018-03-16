@@ -3,6 +3,7 @@
     h1 Features
     ul
       li
+        img#bolt(src="static/images/bolt.svg")
         h2 Quick
         p Install node and run #[span.codeblock yarn add boxescms] to initiate your project on the command line.
       li
@@ -39,7 +40,9 @@
           @media #{$mobile}
             margin-top: 20px
 
-    #quick-icon
+    #bolt
+      width: 130px
+      height: 130px
 
 </style>
 
