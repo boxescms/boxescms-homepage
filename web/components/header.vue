@@ -38,7 +38,7 @@
       #logo
         margin-right: auto
         padding-left: 50px
-        background-image: url("assets/images/boxes-tiny.svg")
+        background-image: url("static/images/boxes-tiny.svg")
         background-position: 25px
         background-size: 20px 20px
         background-repeat: no-repeat

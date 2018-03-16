@@ -1,6 +1,6 @@
 <template lang="pug">
   section#intro.first
-    img(src="assets/images/boxes.svg")
+    img(src="static/images/boxes.svg")
     h1 BOXES CMS
     h2 ExpressJS based API centric CMS
 

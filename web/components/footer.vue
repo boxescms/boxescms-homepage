@@ -4,7 +4,7 @@
 
     .organisations
       a(href="https://github.com/boxescms/boxescms", target="_blank")
-        img(src="assets/images/github-logo.svg")
+        img(src="static/images/github-logo.svg")
 
 </template>
 
