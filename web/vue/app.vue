@@ -20,14 +20,14 @@
 </style>
 
 <script>
-  import appheader from '../components/header.vue'
-  import intro from '../components/intro.vue'
-  import about from '../components/about.vue'
-  import features from '../components/features.vue'
-  import price from '../components/price.vue'
-  import contact from '../components/contact.vue'
-  import support from '../components/support.vue'
-  import appfooter from '../components/footer.vue'
+  import appheader from '../vue/header.vue'
+  import intro from '../vue/intro.vue'
+  import about from '../vue/about.vue'
+  import features from '../vue/features.vue'
+  import price from '../vue/price.vue'
+  import contact from '../vue/contact.vue'
+  import support from '../vue/support.vue'
+  import appfooter from '../vue/footer.vue'
 
   export default {
     name: 'APP',

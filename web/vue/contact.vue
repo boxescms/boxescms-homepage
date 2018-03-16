@@ -45,7 +45,8 @@
             width: 100%
 
           & + .col
-            margin-top: 30px
+            @media #{$mobile}
+              margin-top: 30px
 
       input
         width: 100%
