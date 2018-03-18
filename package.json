@@ -22,6 +22,7 @@
     "server:start": "boxes start",
     "server:dev": "boxes start dev",
     "build": "boxes build",
-    "watch": "boxes watch"
+    "watch": "boxes watch",
+    "dev": "boxes build && boxes start dev"
   }
 }
